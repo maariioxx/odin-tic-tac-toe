@@ -1,1 +1,1 @@
-# odin-tic-tac-toe
+I'm going to create a Tic Tac Toe game using mainly JS
