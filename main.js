@@ -23,19 +23,24 @@ const Gameboard = (() => {
 
 const Game = (() => {
     gameField = document.querySelectorAll(".gameboard-field"),
+    buttons = document.querySelector(".buttons"),
+    restartBtn = document.querySelector(".restart-btn"),
+    message = document.querySelector(".message"),
 
+    message.textContent = `Game started! ${player1.mark} turn!`
     winner = false,
     draw = false,
     turns = 0,
+    restart_created = false,
     
     gameField.forEach(field => {
         field.addEventListener("click", (e) => {
             e.textContent = Gameboard.getGrid(e.target.dataset.index);
-            startGame(field, e);
+            startTurn(field, e);
         })
     }),
 
-    startGame = function(field, e){
+    startTurn = function(field, e){
         if(winner == false && draw == false){
             selection = Number(e.target.dataset.index)
             if(player1.turn == true){
@@ -43,73 +48,90 @@ const Game = (() => {
                     player1.selections.push(selection);
                     console.log(player1.selections)
                     grid[selection] = player1.mark;
-                    checkWinner();
-                    checkDraw();
                     player1.turn = false;
                     player2.turn = true;
                     sign = document.createElement("span")
                     sign.classList.add("material-symbols-outlined")
-                    sign.textContent = "close"
-                    field.appendChild(sign)
+                    sign.textContent = "close";
+                    field.appendChild(sign);
+                    message.textContent = `${player2.mark} turn!`;
+                    checkWinner();
+                    checkDraw();
+                    
                 }  
             }
             else if(player2.turn == true){
                 if (grid[selection] === " "){
                     player2.selections.push(selection);
                     grid[selection] = player2.mark;
-                    checkWinner();
-                    checkDraw();
                     player1.turn = true;
                     player2.turn = false;
                     sign = document.createElement("span")
                     sign.classList.add("material-symbols-outlined")
                     sign.textContent = "circle"
-                    field.appendChild(sign)
+                    field.appendChild(sign);
+                    message.textContent = `${player1.mark} turn!`;
+                    checkWinner();
+                    checkDraw();
+                    
                 }
             }  
         }
-    },        
+    },   
     
-
-        checkWinner = function(){
+    checkWinner = function(){
             for(let combo of Gameboard.winnerSelections){
                 if(combo.every((el) => player1.selections.includes(el))){
-                    console.log(`${player1.name} wins!`)
+                    message.textContent = `${player1.name} wins! Congratulations`
                     return winner = true;
                 }
                 else if(combo.every((el) => player2.selections.includes(el))){
-                    console.log(`${player2.name} wins!`)
+                    message.textContent = `${player2.name} wins! Congratulations`
                     return winner = true;
                 }
             }
-        },
+    },
     
-        checkDraw = function(){
+    checkDraw = function(){
             turns++;
             if(turns == 9 && winner == false){
-                console.log("That's a draw!");
-                resetGame();
+                message = "That's a draw!"
             }
-        }
+    },
     
-        resetGame =  function(){
-            grid.fill(" ", 0);
-            if(player1.turn == false) player1 ? true : false;
-            else if(player2.turn == false) player2 ? true : false;
-        }
+    resetGame = () => {
+        grid.fill(" ", 0);
+        gameField.forEach(field => {
+            field.innerHTML = " ";
+        });
+        player1.selections = [];
+        player2.selections = [];
+        winner = false;
+        draw = false;
+        turns = 0;
+        player1.turn = !player1.turn
+        console.log(player1.turn)
+        player2.turn = !player2.turn;
+        message.textContent = "Click start!"
+    },
+
+    restartBtn.addEventListener("click", () => {
+        resetGame();
+    })
+
+    
 });        
         
 
 
 const displayController = (() => {
-    startGameBtn = document.querySelector(".start-game-btn")
+    startGameBtn = document.querySelector(".start-game-btn"),
     
-
     startGameBtn.addEventListener("click", () => {
         Game();
         console.log("Game started!")
     })
-    
+
     
 })();
     
