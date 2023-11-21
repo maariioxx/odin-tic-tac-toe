@@ -28,6 +28,9 @@ header{
 .gameboard-field{
     border: 1px solid black;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .gameboard-field:nth-child(-n + 9){
@@ -46,3 +49,7 @@ header{
     border-left: none;
 }
 
+.material-symbols-outlined {
+    
+    font-size: 10rem !important;
+}
