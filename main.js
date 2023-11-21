@@ -47,7 +47,10 @@ const Game = (() => {
                     checkDraw();
                     player1.turn = false;
                     player2.turn = true;
-                    field.textContent = player1.mark
+                    sign = document.createElement("span")
+                    sign.classList.add("material-symbols-outlined")
+                    sign.textContent = "close"
+                    field.appendChild(sign)
                 }  
             }
             else if(player2.turn == true){
@@ -58,7 +61,10 @@ const Game = (() => {
                     checkDraw();
                     player1.turn = true;
                     player2.turn = false;
-                    field.textContent = player2.mark
+                    sign = document.createElement("span")
+                    sign.classList.add("material-symbols-outlined")
+                    sign.textContent = "circle"
+                    field.appendChild(sign)
                 }
             }  
         }
