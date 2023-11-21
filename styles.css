@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap');
+
+:root{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: "Poppins", "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    gap: 50px;
+    align-items: center;
+}
+
+header{
+    font-size: 4rem;
+    
+}
+
+.gameboard{
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.gameboard-field{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.gameboard-field:nth-child(-n + 9){
+    border-bottom: none;
+}
+
+.gameboard-field:nth-child(3n){
+    border-right: none;
+}
+
+.gameboard-field:nth-child(-n + 3){
+    border-top: none;
+}
+
+.gameboard-field:nth-child(3n - 2){
+    border-left: none;
+}
+
