@@ -10,12 +10,62 @@ body{
     display: flex;
     flex-direction: column;
     height: 100vh;
-    gap: 70px;
+    gap: 50px;
     align-items: center;
     color: white;
 }
 
+section{
+    margin-top: 25vh;
+    padding: 50px;
+    background-color: #303331;
+    border: 1px solid white;
+    border-radius: 15px;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+
+main:not([hidden]){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.players {
+    display: flex;
+    gap: 30px;
+}
+
+button {
+    background-color: #303331;
+    color: white;
+    font-family: inherit;
+    border: 3px solid #303331;
+    outline: none;
+    height: 30px;
+    width: 90px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover{
+    border: 3px solid white;
+}
+
+.submit {
+    align-self: center;
+    background-color: white;
+    color: black;
+}
+
+.submit:hover{
+    border: 3px solid black;
+}
+
 header{
+    margin: 30px;
     font-size: 4rem;
 }
 
@@ -56,6 +106,8 @@ header{
     font-size: 10rem !important;
 }
 
-.message{
+.message, .results{
     font-size: 2rem
 }
+
+
