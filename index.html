@@ -12,7 +12,20 @@
 </head>
 <body>
     <header>TIC TAC TOE GAME</header>
-    <main>
+    <section>
+        <div class="players">
+            <div class="player1">
+                <h1>Player 1 name:</h1>
+                <input type="text" class="player1-input" minlength="1">
+            </div>
+            <div class="player2">
+                <h1>Player 2 name:</h1>
+                <input type="text" class="player2-input" minlength="1">
+            </div>
+        </div>
+        <button class="submit">SUBMIT</button>
+    </section>
+    <main hidden>
         <div class="gameboard">
             <div class="gameboard-field" data-index="0"></div>
             <div class="gameboard-field" data-index="1"></div>
@@ -24,11 +37,12 @@
             <div class="gameboard-field" data-index="7"></div>
             <div class="gameboard-field" data-index="8"></div>
         </div>
+        <div class="message">Click start!</div>
+        <div class="buttons">
+            <button class="start-game-btn">START</button>
+            <button class="restart-btn">RESTART</button>
+        </div>
     </main>
-    <div class="message">Click start!</div>
-    <div class="buttons">
-        <button class="start-game-btn">START</button>
-        <button class="restart-btn">RESTART</button>
-    </div>
+    
 </body>
 </html>
