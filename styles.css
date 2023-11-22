@@ -1,113 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap");
 
-:root{
-    font-size: 62.5%;
+:root {
+  font-size: 62.5%;
 }
 
-body{
-    font-family: "Poppins", "Montserrat", sans-serif;
-    background-color: rgba(23,23,23,1);
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    gap: 50px;
-    align-items: center;
-    color: white;
+body {
+  font-family: "Poppins", "Montserrat", sans-serif;
+  background-color: rgba(23, 23, 23, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  gap: 50px;
+  align-items: center;
+  color: white;
 }
 
-section{
-    margin-top: 25vh;
-    padding: 50px;
-    background-color: #303331;
-    border: 1px solid white;
-    border-radius: 15px;
-    display: flex;
-    gap: 30px;
-    flex-direction: column;
+section {
+  margin-top: 25vh;
+  padding: 50px;
+  background-color: #303331;
+  border: 1px solid white;
+  border-radius: 15px;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
 }
 
-main:not([hidden]){
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
+main:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
 }
 
 .players {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 button {
-    background-color: #303331;
-    color: white;
-    font-family: inherit;
-    border: 3px solid #303331;
-    outline: none;
-    height: 30px;
-    width: 90px;
-    border-radius: 10px;
-    cursor: pointer;
+  background-color: #303331;
+  color: white;
+  font-family: inherit;
+  border: 3px solid #303331;
+  outline: none;
+  height: 30px;
+  width: 90px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-button:hover{
-    border: 3px solid white;
+button:hover {
+  border: 3px solid white;
 }
 
 .submit {
-    align-self: center;
-    background-color: white;
-    color: black;
+  align-self: center;
+  background-color: white;
+  color: black;
 }
 
-.submit:hover{
-    border: 3px solid black;
+.submit:hover {
+  border: 3px solid black;
 }
 
-header{
-    margin: 30px;
-    font-size: 4rem;
+header {
+  margin: 30px;
+  font-size: 4rem;
 }
 
-.gameboard{
-    width: 500px;
-    height: 500px;
-    display: grid;
-    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    background-color: #303331;
-    border-radius: 15px;
+.gameboard {
+  width: 500px;
+  height: 500px;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  background-color: #303331;
+  border-radius: 15px;
 }
 
-.gameboard-field{
-    border: 1px solid white;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.gameboard-field {
+  border: 1px solid white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.gameboard-field:nth-child(-n + 9){
-    border-bottom: none;
+.gameboard-field:nth-child(-n + 9) {
+  border-bottom: none;
 }
 
-.gameboard-field:nth-child(3n){
-    border-right: none;
+.gameboard-field:nth-child(3n) {
+  border-right: none;
 }
 
-.gameboard-field:nth-child(-n + 3){
-    border-top: none;
+.gameboard-field:nth-child(-n + 3) {
+  border-top: none;
 }
 
-.gameboard-field:nth-child(3n - 2){
-    border-left: none;
+.gameboard-field:nth-child(3n - 2) {
+  border-left: none;
 }
 
 .material-symbols-outlined {
-    font-size: 10rem !important;
+  font-size: 10rem !important;
 }
 
-.message, .results{
-    font-size: 2rem
+.message,
+.results {
+  font-size: 2rem;
 }
-
-
